@@ -5,7 +5,12 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    return numbers;
+    if (numbers.length == 0) {
+        return [];
+    } else if (numbers.length == 1) {
+        return [...numbers, numbers[0]];
+    }
+    return [numbers[0], numbers[numbers.length - 1]];
 }
 
 /**
@@ -13,7 +18,7 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    return numbers.map((multval: number): number => multval * 3);
 }
 
 /**
@@ -21,7 +26,11 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    //console.log();
+    //return numbers.map((strToNum: string): number => (isNaN(Number(strToNum) ? 0) : Number(strToNum)));
+    return numbers.map((strToNum: string): number =>
+        isNaN(parseInt(strToNum)) ? 0 : parseInt(strToNum)
+    );
 }
 
 /**
@@ -32,7 +41,11 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    return amounts.map((strToNum: string): number =>
+        isNaN(parseInt(strToNum.replace("$", "")))
+            ? 0
+            : parseInt(strToNum.replace("$", ""))
+    );
 };
 
 /**
@@ -41,7 +54,11 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    return messages
+        .map((data: string): string =>
+            data.endsWith("!") ? data.toUpperCase() : data
+        )
+        .filter((data: string): boolean => !data.endsWith("?"));
 };
 
 /**
@@ -49,7 +66,10 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    const sum: number = words.filter(
+        (data: string): boolean => data.length < 4
+    ).length;
+    return sum;
 }
 
 /**
@@ -58,7 +78,12 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    if (colors.length == 0) return true;
+    const allowed: string[] = ["red", "blue", "green"];
+    const mod: string[] = colors.filter(
+        (color: string): boolean => !allowed.includes(color)
+    );
+    return mod.length == 0;
 }
 
 /**
@@ -69,7 +94,15 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    if (addends.length == 0) return "0=0";
+    const sum = addends.reduce(
+        (total: number, current: number) => total + current,
+        0
+    );
+
+    const test3: string = sum + "=" + addends.join("+");
+
+    return test3;
 }
 
 /**
@@ -82,5 +115,29 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    const newValues = [...values];
+
+    const sum = values.reduce(
+        (total: number, current: number) => total + current,
+        0
+    );
+    //get first index of num < 0
+    const first: number = values.findIndex(
+        (negative: number): boolean => negative < 0
+    );
+    //console.log(values);
+    //console.log(first);
+    //console.log(sum);
+    if (first == -1) {
+        newValues.splice(values.length, 0, sum);
+        //console.log(newValues);
+    } else {
+        //console.log("---------------------------------");
+        const spliceNum: number = values
+            .slice(0, first)
+            .reduce((total: number, current: number) => total + current, 0);
+        //console.log(spliceNum);
+        newValues.splice(first + 1, 0, spliceNum);
+    }
+    return newValues;
 }
