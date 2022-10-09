@@ -2,7 +2,12 @@ import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
 import cat from "./assets/cat.jpeg";
-
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { Counter } from "./components/Counter";
 function App(): JSX.Element {
     return (
         <div className="App">
@@ -10,48 +15,18 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript Matthew Gwin Section
                 010
             </header>
-            <Container>
-                <Row>
-                    <Col>
-                        <div
-                            style={{
-                                height: "100px",
-                                backgroundColor: "red",
-                                margin: "50px,50px,0px,0px",
-                                padding: "10px, 10px, 0px, 0px"
-                            }}
-                        ></div>
-                    </Col>
-                    <Col>
-                        <div
-                            style={{
-                                height: "100px",
-                                backgroundColor: "red",
-                                margin: "50px,50px,0px,0px",
-                                padding: "10px, 10px, 0px, 0px"
-                            }}
-                        ></div>
-                    </Col>
-                </Row>
-            </Container>
-            <h1>The Danimal</h1>
-            <img
-                src={cat}
-                alt="A picture of my Cat Phoebe"
-                style={{ width: "500px" }}
-            />
-            <ol>
-                <li>Cat 1</li>
-                <li>Cat 2</li>
-                <li>Cat 3</li>
-            </ol>
-            <Button onClick={() => console.log("Hello World!")}>
-                Log Hello World
-            </Button>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload. Hello World
-            </p>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr />
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
