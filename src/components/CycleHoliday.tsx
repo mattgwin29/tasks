@@ -19,23 +19,32 @@ export function CycleHoliday(): JSX.Element {
         "🍀": "🗡"
     };
 
-    const [emojiDay, setNextByYear] = useState<emojis>("🎄");
-    const [emojiYear, setNextByAlpha] = useState<emojis>("🎄");
+    //const [emojiDay, setNextByYear] = useState<emojis>("🎄");
+    //const [emojiYear, setNextByAlpha] = useState<emojis>("🎄");
+    const [currentEmoji, setNextEmoji] = useState<emojis>("🎄");
 
-    function changeDayAlpha(): void {
+    /*function changeDayAlpha(): void {
         const newEmoji = ALPHA_TRANSITIONS[emojiDay];
         setNextByYear(newEmoji);
     }
     function changeDayYear(): void {
         const newEmoji = YEAR_TRANSITIONS[emojiDay];
         setNextByYear(newEmoji);
-    }
+    }*/
 
     return (
         <div>
-            <Button onClick={changeDayYear}>Advance by Year</Button>
-            <Button onClick={changeDayAlpha}>Advance by alphabet</Button>
-            <div>Holiday: {emojiDay}</div>
+            <Button
+                onClick={() => setNextEmoji(YEAR_TRANSITIONS[currentEmoji])}
+            >
+                Advance by Year
+            </Button>
+            <Button
+                onClick={() => setNextEmoji(ALPHA_TRANSITIONS[currentEmoji])}
+            >
+                Advance by alphabet
+            </Button>
+            <div>Holiday: {currentEmoji}</div>
         </div>
     );
 }
