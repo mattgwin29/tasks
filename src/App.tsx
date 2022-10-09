@@ -1,7 +1,6 @@
 import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
-import cat from "./assets/cat.jpeg";
+//import cat from "./assets/cat.jpeg";
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
