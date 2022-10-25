@@ -13,7 +13,7 @@ PASS src/components/TwoDice.test.tsx
 PASS src/form-components/MultipleChoiceQuestion.test.tsx
 PASS src/bad-components/ChooseTeam.test.tsx
 PASS src/bad-components/DoubleHalf.test.tsx
-FAIL src/HtmlCss.test.tsx (5.588 s)
+FAIL src/HtmlCss.test.tsx
   ● Some HTML Elements are added. › There is a header
 
     TestingLibraryElementError: Found multiple elements with the role "heading"
@@ -4976,7 +4976,7 @@ All files                    |   99.57 |    97.64 |     100 |   99.54 |
   functions.ts               |     100 |      100 |     100 |     100 |                   
   nested.ts                  |     100 |      100 |     100 |     100 |                   
   objects.ts                 |     100 |      100 |     100 |     100 |                   
- src/bad-components          |   96.87 |       50 |     100 |   96.77 |                   
+ src/bad-components          |   96.96 |       50 |     100 |   96.87 |                   
   ChooseTeam.tsx             |     100 |       50 |     100 |     100 | 18                
   ColoredBox.tsx             |     100 |      100 |     100 |     100 |                   
   DoubleHalf.tsx             |     100 |      100 |     100 |     100 |                   
@@ -5001,7 +5001,7 @@ All files                    |   99.57 |    97.64 |     100 |   99.54 |
 -----------------------------|---------|----------|---------|---------|-------------------
 
 Summary of all failing tests
-FAIL src/HtmlCss.test.tsx (5.588 s)
+FAIL src/HtmlCss.test.tsx
   ● Some HTML Elements are added. › There is a header
 
     TestingLibraryElementError: Found multiple elements with the role "heading"
@@ -9926,5 +9926,5 @@ FAIL src/text.test.tsx
 Test Suites: 2 failed, 20 passed, 22 total
 Tests:       6 failed, 136 passed, 142 total
 Snapshots:   0 total
-Time:        22.205 s
+Time:        16.586 s
 Ran all test suites.
