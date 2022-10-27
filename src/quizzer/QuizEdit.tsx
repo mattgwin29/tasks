@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Question } from "../interfaces/question";
@@ -12,20 +13,20 @@ export const QuizEdit = ({
     deleteQuiz,
     switchEdit,
     resetView
-}: {quiz: Quiz, editQuiz: (id: number, q:Quiz )=>void, deleteQuiz: (id: number)=> void, switchEdit: ()=> void, resetView: ()=> void }) => {
+}: { quiz: Quiz, editQuiz: (id: number, q: Quiz) => void, deleteQuiz: (id: number) => void, switchEdit: () => void, resetView: () => void }) => {
     const [newQuiz, setNewQuiz] = useState<Quiz>({ ...quiz });
 
     const editQuestion = (questionId: number, newQuestion: Question) => {
         setNewQuiz({
             ...newQuiz,
-            questionList: newQuiz.questionList.map((q: Question): Question => (q.id === questionId) ? newQuestion: q)
-        })
+            questionList: newQuiz.questionList.map((q: Question): Question => q.id === questionId ? newQuestion : q)
+        });
     };
 
     const removeQuestion = (questionId: number) => {
         setNewQuiz({
             ...newQuiz,
-            questionList: newQuiz.questionList.filter((q: Question) : boolean => (q.id !== questionId))
+            questionList: newQuiz.questionList.filter((q: Question): boolean => q.id !== questionId)
         });
     };
 

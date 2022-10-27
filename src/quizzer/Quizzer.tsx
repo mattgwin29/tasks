@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { Quiz } from "../interfaces/quiz";
 import { Question, QuestionType } from "../interfaces/question";
@@ -31,8 +34,9 @@ export const Quizzer = () => {
     }
 
     function addQuiz(title: string, body: string) {
-        setQuizzes([...quizzes, {id: -1,  title: title,  body: "",  published: false, questionList: []
-    }]);
+        setQuizzes([...quizzes, {
+            id: -1, title: title, body: "", published: false, questionList: []
+        }]);
     }
 
     function deleteQuiz(qId: number) {

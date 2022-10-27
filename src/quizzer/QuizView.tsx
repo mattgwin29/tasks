@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { Quiz } from "../interfaces/quiz";
 import { QuizExpanded } from "./QuizExpanded";
@@ -10,7 +11,7 @@ export const QuizView = ({
     editQuiz,
     deleteQuiz,
     resetView
-}: {quiz: Quiz, editQuiz: (id: number, q:Quiz)=> void, deleteQuiz: (id: number)=>void, resetView: ()=> void}) => {
+}: { quiz: Quiz, editQuiz: (id: number, q: Quiz) => void, deleteQuiz: (id: number) => void, resetView: () => void }) => {
     const [edit, setEdit] = useState(false);
 
     const switchEdit = () => {
@@ -38,4 +39,4 @@ export const QuizView = ({
             )}
         </div>
     );
- }
+};

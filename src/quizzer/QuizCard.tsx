@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 import { Quiz } from "../interfaces/quiz";
 
@@ -7,7 +8,7 @@ import { Question } from "../interfaces/question";
 export const QuizCard = ({
     quiz,
     handleClick
-}: {quiz: Quiz, handleClick: (id: number)=>void}) => {
+}: { quiz: Quiz, handleClick: (id: number) => void }) => {
     const filteredQuestions = quiz.questionList.filter(
         (q: Question): boolean =>
             (quiz.published && q.published) || !quiz.published

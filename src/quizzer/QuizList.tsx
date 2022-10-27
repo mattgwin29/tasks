@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Quiz } from "../interfaces/quiz";
@@ -10,7 +11,7 @@ export const QuizList = ({
     editQuiz,
     deleteQuiz,
     showModal
-}: {quizzes: Quiz[], editQuiz: (qId: number, newQuiz: Quiz)=> void, deleteQuiz: (id: number)=> void, showModal: ()=> void}) => {
+}: { quizzes: Quiz[], editQuiz: (qId: number, newQuiz: Quiz) => void, deleteQuiz: (id: number) => void, showModal: () => void }) => {
     const [displayId, setDisplayId] = useState<null | number>(null);
 
     const handleQuizView = (id: number) => {
@@ -49,6 +50,7 @@ export const QuizList = ({
                         ></QuizView>
                     );
                 }
+                // eslint-disable-next-line react/jsx-key
                 return (<div></div>);
             })}
         </div>

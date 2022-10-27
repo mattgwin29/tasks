@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Question } from "../interfaces/question";
@@ -11,7 +12,7 @@ export const QuizExpanded = ({
     editQuiz,
     resetView,
     switchEdit
-}: {quiz: Quiz,  editQuiz: (id: number, q:Quiz )=>void, resetView: ()=> void, switchEdit: ()=> void}) => {
+}: { quiz: Quiz, editQuiz: (id: number, q: Quiz) => void, resetView: () => void, switchEdit: () => void }) => {
     const filteredQuestions = quiz.questionList.filter(
         (q: Question): boolean =>
             (quiz.published && q.published) || !quiz.published
@@ -51,7 +52,7 @@ export const QuizExpanded = ({
     const editQuestionSub = (questionId: number, sub: string) => {
         editQuiz(quiz.id, {
             ...quiz, //check this
-            questionList: quiz.questionList.map((q: Question): Question => ((q.id === questionId) ?  {...q, submission: sub} : q))
+            questionList: quiz.questionList.map((q: Question): Question => (q.id === questionId ? { ...q, submission: sub } : q))
         });
     };
 
