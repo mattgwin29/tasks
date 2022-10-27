@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Question } from "../interfaces/question";
@@ -11,7 +12,7 @@ export const QuestionEdit = ({
     editQuestion,
     removeQuestion,
     swapQuestion
-}: {index: number, lastIndex: number, question: Question, editQuestion: (id: number, q: Question)=> void, removeQuestion: (id: number) => void, swapQuestion: (first: number, second: number)=> void}) => {
+}: { index: number, lastIndex: number, question: Question, editQuestion: (id: number, q: Question) => void, removeQuestion: (id: number) => void, swapQuestion: (first: number, second: number) => void }) => {
     const [a, b] = useState<number>(
         question.options.findIndex((s: string) => question.expected === s)
     );
@@ -39,7 +40,7 @@ export const QuestionEdit = ({
     };
 
     const handlePoints = (e: React.ChangeEvent<HTMLInputElement>) => {
-    	question.points = parseInt(e.target.value)
+        question.points = parseInt(e.target.value);
         editQuestion(question.id, question);
     };
 

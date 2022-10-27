@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 
@@ -6,7 +7,7 @@ export const AddQuizModal = ({
     handleClose,
     addQuiz,
 
-}: {show: boolean, handleClose: ()=> void, addQuiz: (title: string, body: string)=> void}) => {
+}: { show: boolean, handleClose: () => void, addQuiz: (title: string, body: string) => void }) => {
     const [title, setTitle] = useState<string>("Example Quiz");
     const [body, setBody] = useState<string>("Example Body");
 
