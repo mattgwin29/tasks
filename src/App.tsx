@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-//import cat from "./assets/cat.jpeg";
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
